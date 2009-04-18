@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/component-install.dtd">
+<install type="component" version="1.5.0">
+	<name>Messaging</name>
+	<author>Sander Kromwijk</author>
+	<creationDate>May 2008</creationDate>
+	<copyright>Sander Kromwijk. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>s.kromwijk@gmail.com</authorEmail>
+	<authorUrl>http://www.TheTricky.NET</authorUrl>
+	<version>1.5.0</version>
+	<description><![CDATA[ 
+		<div>
+			The component should have been installed now. Please ignore the error messages concerning the
+			language, their purpose is to tell you that the language has not been installed, because it is
+			not available on this site.<br /><br />
+			To change settings, go to "Components"-&gt;Messaging, and change
+			the value.
+		</div>
+  ]]></description>
+	
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>com_messaging.script.js</filename>
+		<filename>messaging.php</filename>
+		<filename>controller.php</filename>
+		<filename>router.php</filename>
+		<filename>controllers/message.php</filename>
+		<filename>controllers/index.html</filename>
+		<filename>models/messages.php</filename>
+		<filename>models/sentmessages.php</filename>
+		<filename>models/message.php</filename>
+		<filename>models/index.html</filename>
+		<filename>views/messages/view.html.php</filename>
+		<filename>views/messages/index.html</filename>
+		<filename>views/messages/tmpl/default.php</filename>
+		<filename>views/messages/tmpl/index.html</filename>
+		<filename>views/message/view.html.php</filename>
+		<filename>views/message/tmpl/default.php</filename>
+		<filename>views/message/index.html</filename>
+		<filename>views/message/tmpl/index.html</filename>
+		<filename>views/sentmessages/view.html.php</filename>
+		<filename>views/sentmessages/tmpl/default.php</filename>
+		<filename>views/sentmessages/index.html</filename>
+		<filename>views/sentmessages/tmpl/index.html</filename>
+		<filename>smilies/aa.gif</filename>
+		<filename>smilies/ab.gif</filename>
+		<filename>smilies/ac.gif</filename>
+		<filename>smilies/ad.gif</filename>
+		<filename>smilies/ae.gif</filename>
+		<filename>smilies/af.gif</filename>
+		<filename>smilies/ag.gif</filename>
+		<filename>smilies/ah.gif</filename>
+		<filename>smilies/ai.gif</filename>
+		<filename>smilies/ak.gif</filename>
+		<filename>smilies/ao.gif</filename>
+		<filename>smilies/ap.gif</filename>
+		<filename>smilies/at.gif</filename>
+		<filename>smilies/av.gif</filename>
+		<filename>smilies/ax.gif</filename>
+		<filename>smilies/ay.gif</filename>
+		<filename>smilies/az.gif</filename>
+		<filename>smilies/bc.gif</filename>
+		<filename>smilies/be.gif</filename>
+		<filename>smilies/bf.gif</filename>
+		<filename>smilies/bh.gif</filename>
+		<filename>smilies/bi.gif</filename>
+		<filename>smilies/bj.gif</filename>
+		<filename>smilies/bl.gif</filename>
+		<filename>smilies/bm.gif</filename>
+		<filename>smilies/bp.gif</filename>
+		<filename>smilies/bs.gif</filename>
+		<filename>smilies/bu.gif</filename>
+		<filename>smilies/bv.gif</filename>
+		<filename>smilies/bw.gif</filename>
+		<filename>images/bold.gif</filename>
+		<filename>images/code.gif</filename>
+		<filename>images/color.gif</filename>
+		<filename>images/image.gif</filename>
+		<filename>images/italic.gif</filename>
+		<filename>images/quote.gif</filename>
+		<filename>images/size.gif</filename>
+		<filename>images/underline.gif</filename>
+		<filename>images/url.gif</filename>
+	</files>
+	
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">install.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">uninstall.sql</file>
+		</sql>
+	</uninstall>
+	
+	<languages>
+		<language tag="en-GB">en-GB.com_messaging.ini</language>
+		<language tag="nl-NL">nl-NL.com_messaging.ini</language>
+		<language tag="fr-FR">fr-FR.com_messaging.ini</language>
+	</languages>
+	
+	<administration>
+		<menu>Messaging</menu>
+		
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>admin.messaging.php</filename>
+			<filename>install.sql</filename>
+			<filename>uninstall.sql</filename>
+			<filename>controller.php</filename>
+			<filename>tables/message.php</filename>
+			<filename>tables/index.html</filename>
+			<filename>controllers/index.html</filename>
+			<filename>controllers/message.php</filename>
+			<filename>models/index.html</filename>
+			<filename>models/message.php</filename>
+			<filename>views/index.html</filename>
+			<filename>views/message/view.html.php</filename>
+			<filename>views/message/tmpl/default.php</filename>
+			<filename>views/message/tmpl/index.html</filename>
+		</files>
+		
+		<languages folder="admin">
+			<language tag="en-GB">en-GB.com_messaging.ini</language>
+			<language tag="nl-NL">nl-NL.com_messaging.ini</language>
+			<language tag="fr-FR">fr-FR.com_messaging.ini</language>
+		</languages>
+	</administration>
+</install>
