@@ -10,13 +10,13 @@ CREATE TABLE `#__messaging` (
   `seen` bool NOT NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY  (`n`)
-) DEFAULT CHARACTER SET utf8;
+);
 
 CREATE TABLE `#__messaging_groups` (
   `n` int(11) NOT NULL,
   `groupName` varchar(75) NOT NULL,
   `messageLimit` int(11) NOT NULL
-) DEFAULT CHARACTER SET utf8;
+);
 
 INSERT INTO `#__messaging_groups` VALUES (0,'Super Administrator',0);
 INSERT INTO `#__messaging_groups` VALUES (1,'Administrator',0);
