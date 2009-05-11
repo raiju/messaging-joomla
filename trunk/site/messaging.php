@@ -27,22 +27,26 @@ if($user->guest){	//Check if the user is logged in
 	$allowed = false;
 	//Check if the controller is allowed
 	switch($controller){
+		case "":
 		case "message":
 			$allowed = true;
 			break;
 	}
 	if($allowed) {
-		require_once (JPATH_COMPONENT.DS.'controllers'.DS.$controller.'.php');
+		if($controller)
+			require_once (JPATH_COMPONENT.DS.'controllers'.DS.$controller.'.php');
+
+		// Create the controller
+		$classname	= 'MessagesController'.$controller;
+		$controller = new $classname( );
+
+		// Perform the Request task
+		$controller->execute( JRequest::getVar('task'));
+
+		// Redirect if set by the controller
+		$controller->redirect();
+	}else{
+		JError::raiseError(403, JText::_('REQUESTFORBIDDEN'));
 	}
-
-	// Create the controller
-	$classname	= 'MessagesController'.$controller;
-	$controller = new $classname( );
-
-	// Perform the Request task
-	$controller->execute( JRequest::getVar('task'));
-
-	// Redirect if set by the controller
-	$controller->redirect();
 }
 ?>
