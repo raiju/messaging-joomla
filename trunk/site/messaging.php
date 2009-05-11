@@ -23,7 +23,15 @@ if($user->guest){	//Check if the user is logged in
 	require_once (JPATH_COMPONENT.DS.'controller.php');
 
 	// Require specific controller if requested
-	if($controller = JRequest::getVar('controller')) {
+	$controller = JRequest::getVar('controller');
+	$allowed = false;
+	//Check if the controller is allowed
+	switch($controller){
+		case "message":
+			$allowed = true;
+			break;
+	}
+	if($allowed) {
 		require_once (JPATH_COMPONENT.DS.'controllers'.DS.$controller.'.php');
 	}
 
