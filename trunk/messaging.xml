@@ -8,14 +8,13 @@
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>s.kromwijk@gmail.com</authorEmail>
 	<authorUrl>http://www.TheTricky.NET</authorUrl>
-	<version>1.5.1</version>
+	<version>1.6</version>
 	<description><![CDATA[ 
 		<div>
 			The component should have been installed now. Please ignore the error messages concerning the
 			language, their purpose is to tell you that the language has not been installed, because it is
 			not available on this site.<br /><br />
-			To change settings, go to "Components"-&gt;Messaging, and change
-			the value.
+			To access the settings panel, go to "Components"-&gt;Messaging.
 		</div>
   ]]></description>
 	
