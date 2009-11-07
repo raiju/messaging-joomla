@@ -1,16 +1,16 @@
-DROP TABLE IF EXISTS `#__messaging`;
+﻿DROP TABLE IF EXISTS `#__messaging`;
 DROP TABLE IF EXISTS `#__messaging_groups`;
 
 CREATE TABLE `#__messaging` (
   `n` int(11) NOT NULL auto_increment,
   `idFrom` int(11) NOT NULL,
   `idTo` int(11) NOT NULL,
-  `subject` varchar(100) NOT NULL,
-  `message` text NOT NULL,
+  `subject` varchar(100) NOT NULL CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `message` text NOT NULL CHARACTER SET utf8 COLLATE utf8_general_ci,
   `seen` bool NOT NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY  (`n`)
-);
+) ;
 
 CREATE TABLE `#__messaging_groups` (
   `n` int(11) NOT NULL,
