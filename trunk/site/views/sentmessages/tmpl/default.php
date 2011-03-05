@@ -75,9 +75,10 @@ echo JText::_("SENTMESSAGES");
 			$row = &$this->items[$i];
 			
 			$tempuser =& JFactory::getUser($row->idTo);
+      $shownUser = $tempuser->name;
 			
 			$link 		= "javascript:setMessage(".$i.");";
-			$script 	.= "fromText[".$i."] = '<div style=\\'float:left\\'>".htmlspecialchars($tempuser->name, ENT_QUOTES)."</div><div style=\\'clear:both\\'></div>';"."\n";
+			$script 	.= "fromText[".$i."] = '<div style=\\'float:left\\'>".htmlspecialchars($shownUser, ENT_QUOTES)."</div><div style=\\'clear:both\\'></div>';"."\n";
 			$script 	.= "subjectText[".$i."] = '".htmlspecialchars($row->subject, ENT_QUOTES)."';"."\n";
 			$script 	.= "messageText[".$i."] = '".str_replace(array("\r", "\n", "<br /><br />","'"), array("<br />","<br />","<br />","&#039;"), $row->message)."';"."\n";
 			//End Build Vars - Edit from here
@@ -88,7 +89,7 @@ echo JText::_("SENTMESSAGES");
 			<tr class="<?php echo "row$k"; ?>" <?php if($i%2 == 1){ echo "style='background: #F0F0F0;'"; } ?>>
 				<td>
 					<!-- From -->
-					<a href="<?php echo $link; ?>"><?php echo $tempuser->name ?></a>
+					<a href="<?php echo $link; ?>"><?php echo $shownUser; ?></a>
 				</td>
 				<td style="padding-left: 15px;">
 					<!-- Subject -->
