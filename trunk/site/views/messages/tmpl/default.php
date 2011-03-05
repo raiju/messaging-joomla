@@ -133,10 +133,11 @@ echo $messagePercentageTitle;
 			}
 			
 			$tempuser =& JUser::getInstance($row->idFrom);
+      $shownUser = $tempuser->name;
 			
 			//Build the "Reply" link + code
 			$getSuffix = '&sendError=1';
-			$getSuffix .= '&to='.$tempuser->name;
+			$getSuffix .= '&to='.$shownUser;
 			$getSuffix .= '&subject=RE: '.htmlspecialchars($row->subject, ENT_QUOTES);
 			$getSuffix .= '&message=';
 			$link = JRoute::_('index.php?option=com_messaging&view=message'.$getSuffix);
@@ -144,7 +145,7 @@ echo $messagePercentageTitle;
 			
 			$checked 	= JHTML::_('grid.id',   $i, $row->n );
 			$link 		= "javascript:setMessage(".$i.");";
-			$script 	.= "fromText[".$i."] = '<div style=\\'float:left\\'>".htmlspecialchars($tempuser->name, ENT_QUOTES)."</div>".$replyCode."<div style=\\'clear:both\\'></div>';"."\n";
+			$script 	.= "fromText[".$i."] = '<div style=\\'float:left\\'>".htmlspecialchars($shownUser, ENT_QUOTES)."</div>".$replyCode."<div style=\\'clear:both\\'></div>';"."\n";
 			$script 	.= "subjectText[".$i."] = '".htmlspecialchars($row->subject, ENT_QUOTES)."';"."\n";
 			$script 	.= "messageText[".$i."] = '".str_replace(array("\r", "\n", "<br /><br />","'"), array("<br />","<br />","<br />","&#039;"), $row->message)."';"."\n";
 			//End Build Vars - Edit from here
@@ -161,7 +162,7 @@ echo $messagePercentageTitle;
 				<td>
 					<a href="<?php echo $link; ?>">
 					<?php if($bold){ echo "<b>"; } ?>
-					<?php echo $tempuser->name ?>
+					<?php echo $shownUser; ?>
 					<?php if($bold){ echo "</b>"; } ?>
 					</a>
 				</td>
